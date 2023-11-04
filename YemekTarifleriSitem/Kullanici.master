@@ -1,0 +1,65 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Kullanici.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            width: 100%;
+            height: 45px;
+        }
+        .auto-style2 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div style="width:700px; height:200px; background-color:antiquewhite; margin:auto;">
+            <asp:Image ID="Image1" runat="server" Height="203px" ImageUrl="~/img/resim82.jpg" Width="701px" />
+        </div>
+        <div style="width:700px; height:50px; background-color:aquamarine; margin:auto; margin-top:20px;">
+            <table class="auto-style1">
+                <tr>
+                    <td><a href="Anasayfa.aspx">ANASAYFA</a></td>
+                    <td><a href="GununYemegi.aspx">GÜNÜN YEMEĞİ</a></td>
+                    <td><a href="TarifOner.aspx">TARİF ÖNER</a></td>
+                    <td><a href="Hakkimizda.aspx">HAKKIMIZDA</a></td>
+                    <td><a href="iletisim.aspx">İLETİŞİM</a></td>
+                </tr>
+            </table>
+        </div>
+        <div style="width:700px; height:auto; margin:auto; margin-top:20px;">
+            <div style="float:left; width:250px; height:350px; background-color:cornflowerblue;" class="auto-style2">
+                <strong>
+                <br />
+                KATEGORİLER<br />
+                <br />
+                <asp:DataList ID="DataList1" runat="server" style="text-align: left">
+                    <ItemTemplate>
+                        <div style="padding: 5px; font-family: Arial, Helvetica, sans-serif; font-size: medium; border: thin solid #FFFFFF; letter-spacing: normal;">
+                            <strong>
+                                <a href="KategoriDetay.aspx?Kategoriid=<%# Eval("Kategoriid") %>">  <asp:Label ID="Label1" runat="server" Text='<%# Eval("KategoriAd") %>'></asp:Label></a>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong>
+                            <asp:Label ID="Label2" runat="server" Text='<%# Eval("KategoriAdet") %>'></asp:Label>
+                        </div>
+                    </ItemTemplate>
+                </asp:DataList>
+                </strong>
+            </div>
+            <div style="float:right; width:400px; height:auto; background-color:cadetblue;">
+                   <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+                           
+                           </asp:ContentPlaceHolder>
+            </div>
+        </div>
+    
+    </form>
+</body>
+</html>
+
+                      
